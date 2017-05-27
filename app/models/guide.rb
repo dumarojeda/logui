@@ -5,5 +5,7 @@ class Guide < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   belongs_to :country
-  has_many :languages
+  has_many :languages, through: :guide_languages
+  has_many :activities
+  has_many :scores, as: :scoreable
 end
