@@ -6,4 +6,5 @@ class Guide < ApplicationRecord
   
   belongs_to :country
   has_many :languages
+  has_many :activities
 end
