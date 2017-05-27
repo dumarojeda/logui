@@ -4,7 +4,7 @@ class Tourist < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  belongs_to :country
+  # asociations
   belongs_to :city
   has_many :languages, through: :tourist_languages
 end

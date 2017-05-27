@@ -1,0 +1,36 @@
+@import 'variables.scss';
+
+.form {
+  @at-root &__section {
+    padding: 1em 2em;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    a {
+      color: $purple;
+      display: inline-block;
+      font-size: 0.8em;
+    }
+    br {
+      display: none;
+    }
+  }
+  @at-root &__field {
+    display: block;
+    width: 100%;
+    padding: 8px 15px;
+    background-color: $whitesmoke;
+    border: 0;
+  }
+  @at-root &__button {
+    background-color: $purple;
+    color: white;
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    margin: 0 auto;
+    display: block
+  }
+}
+
+.main__title {
+  text-align: center;
+}
