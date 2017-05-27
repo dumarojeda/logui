@@ -1,0 +1,55 @@
+@import 'variables.scss';
+
+body.site {
+	color: $gray;
+	font-family: $titleFont;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	position: relative;
+	box-shadow: 2px 2px 1px #ccc;
+	.slogan {
+		padding-left: 12px;
+		padding-top: 17px;
+	}
+	@at-root &__logo {
+		width: 90px;
+		height: 50px;
+		a {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			background-image: image-url('logo-purple.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+	}
+	@at-root &__nav {
+		position: absolute;
+		right: 20px;
+		ul {
+			margin: 0;
+		}
+		li {
+			display: inline-block;
+			&:last-child {
+				padding-left: 10px;
+			}
+			a {
+				color: $gray;
+				font-weight: bold;
+			}
+		}
+	}
+	.action {
+		@at-root &__join {
+			background-color: $purple;
+			color: white;
+			padding: 15px;
+			border-radius: 5px;
+		}
+	}
+}
