@@ -5,5 +5,5 @@ class Tourist < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :country
-  has_many :languages
+  has_many :languages, through: :tourist_languages
 end
