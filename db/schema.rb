@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527191951) do
+ActiveRecord::Schema.define(version: 20170527194546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "city"
+    t.string   "img_url"
+    t.integer  "price"
+    t.integer  "guide_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["guide_id"], name: "index_activities_on_guide_id", using: :btree
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -58,6 +70,13 @@ ActiveRecord::Schema.define(version: 20170527191951) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "scores", force: :cascade do |t|
+    t.integer  "scoreable_id"
+    t.string   "scoreable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "tourist_languages", force: :cascade do |t|
     t.integer  "tourist_id"
     t.integer  "language_id"
@@ -86,6 +105,7 @@ ActiveRecord::Schema.define(version: 20170527191951) do
     t.index ["reset_password_token"], name: "index_tourists_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "activities", "guides"
   add_foreign_key "guide_languages", "guides"
   add_foreign_key "guide_languages", "languages"
   add_foreign_key "tourist_languages", "languages"
