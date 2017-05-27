@@ -3,5 +3,7 @@ class Guide < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
   belongs_to :country
+  has_many :languages
 end
