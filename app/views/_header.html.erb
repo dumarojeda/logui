@@ -4,8 +4,8 @@
 	</div>
 	<nav class="header__nav">
 		<ul>
-			<li><a href="">Log In</a></li>
-			<li><a class="action__join" href="">Become a Guide</a></li>
+			<li><%= link_to "Log In", new_tourist_session_path %></li>
+			<li><%= link_to "Become a Guide", new_guide_registration_path, class: 'action__join' %></li>
 		</ul>
 	</nav>
 </header>
