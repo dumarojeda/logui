@@ -1,0 +1,21 @@
+<div class="home">
+	<div class="container">
+	<div class="row">
+		<%= form_tag guides_path, method: 'get', authenticity_token: false do %>
+
+		<% @cities.each do |city| %>
+			<div class="home__city col-sm-6 col-md-3">
+				<%= radio_button_tag "city", city.name, false %>
+				<label for="<%= city.name %>"><%= city.name %></label>
+				<img src="https://a4.odistatic.net/images/landingpages/vacation/640x480/bogota_640x480.jpg" alt="">
+			</div>
+		<% end %>
+
+		<p>
+		 <%= collection_select(:language, :id, Language.all, :id, :name, {:prompt => 'choose your language'}) %>
+
+		 <%= submit_tag "Search", :name => nil %>
+		</p>
+		<% end %>
+	</div>
+</div>
