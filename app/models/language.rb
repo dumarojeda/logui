@@ -1,4 +1,4 @@
 class Language < ApplicationRecord
-  has_many :tourists
-  has_many :guides
+  has_many :guide_languages
+  has_many :guides, through: :guide_languages
 end
