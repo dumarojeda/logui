@@ -1,7 +1,7 @@
 <div class="home">
 	<div class="container">
 	<div class="row">
-		<%= form_tag root_path, method: 'get', authenticity_token: false do %>
+		<%= form_tag guides_path, method: 'get', authenticity_token: false do %>
 
 		<% @cities.each do |city| %>
 			<div class="home__city col-sm-6 col-md-3">
