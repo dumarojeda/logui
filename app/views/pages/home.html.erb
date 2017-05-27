@@ -1,21 +1,36 @@
 <div class="home">
 	<div class="container">
-	<div class="row">
-		<%= form_tag root_path, method: 'get', authenticity_token: false do %>
 
-		<% @cities.each do |city| %>
-			<div class="home__city col-sm-6 col-md-3">
-				<%= radio_button_tag "city", city.name, false %>
-				<label for="<%= city.name %>"><%= city.name %></label>
-				<img src="https://a4.odistatic.net/images/landingpages/vacation/640x480/bogota_640x480.jpg" alt="">
+		<h2 class="home-copy">
+			Reserva actividades en tu idioma y disfruta tu viaje como si estuvieras en tu ciudad
+		</h2>
+
+		<%= form_tag guides_path, method: 'get', authenticity_token: false do %>
+
+		<div class="row home__cities">
+			<% @cities.each do |city| %>
+				<div class="home__city col-sm-6 col-md-2">
+					<%= radio_button_tag "city", city.name, false %>
+					<div class="home__city__info">
+						<h1><%= city.name %></h1>
+						<i class="fa fa-check-circle"></i>
+					</div>
+					<%= image_tag city.img_url %>
+					</div>
+			<% end %>
+		</div>
+
+			<h2 class="text-center">Select your language </h2>
+			<div class="row home__languages">
+				<% @languages.each do |language| %>
+					<div class="home__language">
+						<%= radio_button_tag "language", language.name, false %>
+						<label for="<%= language.name %>"><%= language.name %></label>
+						<%= image_tag language.img_url %>
+					</div>
+				<% end %>
 			</div>
-		<% end %>
-
-		<p>
-		 <%= collection_select(:language, :id, Language.all, :id, :name, {:prompt => 'choose your language'}) %>
-
 		 <%= submit_tag "Search", :name => nil %>
-		</p>
 		<% end %>
 	</div>
 </div>
