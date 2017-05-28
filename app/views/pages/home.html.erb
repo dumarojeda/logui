@@ -51,7 +51,7 @@
 	</div>
 	<div class="how-it-works">
 		<div class="container">
-			<h2>Como funciona </h2>
+			<h2 class="purple">Como funciona </h2>
 			<div class="row">
 				<div class="hiw__item step1 col-sm-12 col-md-4">
 					<%= image_tag 'city.svg' %>
@@ -70,7 +70,7 @@
 	</div>
 	<div class="home__activities">
 		<div class="container">
-			<h2>Actividades Recientes:</h2>
+			<h2 class="purple">Actividades Recientes:</h2>
 			<div class="row">
 				<% @activities.each do |activity| %>
 					<a href="activities/<%= activity.id %>" class="home__activity col-sm-12 col-md-3">

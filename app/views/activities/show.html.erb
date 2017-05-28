@@ -1,35 +1,45 @@
+<div class="activities__detail">
+  <div class="activities__detail__header">
+    <p class="name"><%= @activity.name %></p>
+    <%= image_tag @activity.img_url %>
+  </div>
+  <div class="container">
+    <h2>Activity</h2>
+    <div class="row">
+      <div class="col-sm-12 col-md-7">
+        <p><%= @activity.description.html_safe %></p>
+        <p>price: <%= @activity.price %></p>
+        <p>guide_id: <%= @activity.guide_id %></p>
+        <p>hour: <%= @activity.hour %></p>
+        <p>includes: <%= @activity.includes %></p>
+        <p>observations: <%= @activity.observations %></p>
+        <p>city: <%= @activity.city.name %></p>
+        <p>language: <%= @activity.language.name %></p>
+        <form>
+        <script src="https://s3-us-west-2.amazonaws.com/epayco/v1.0/checkoutEpayco.js"
+            class="epayco-button"
+            data-epayco-key="19e22cc4de27ab26bfce37edb69973ce"
+            data-epayco-amount="<%= @activity.price ||= 50000 %>"
+            data-epayco-name="<%= @activity.name %>"
+            data-epayco-description="<%= @activity.description  %>"
+            data-epayco-currency="cop"
+            data-epayco-country="co"
+            data-epayco-test="true"
+            data-epayco-response="http://98b5f63c.ngrok.io"
+            data-epayco-confirmation="http://98b5f63c.ngrok.io" >
+        </script>
+        </form>
+        <%= link_to "Edit Activity",   edit_guide_activity_path(@activity.guide.id, @activity.id  ) %>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <h2>Guide for this activity</h2>
+        <p><%= @activity.guide.name %></p>
+        <p><%= @activity.guide.description %></p>
+        
+        <%= link_to "ver guia", activity_guide_path(@activity.id, @activity.guide.id ) %>
+      </div>
+    </div>
 
-<div>
-  <h2>Activity</h2>
-  <p>name: <%= @activity.name %></p>
-  <p>description: <%= @activity.description %></p>
-  <p>img_url: <%= @activity.img_url %></p>
-  <p>price: <%= @activity.price %></p>
-  <p>guide_id: <%= @activity.guide_id %></p>
-  <p>hour: <%= @activity.hour %></p>
-  <p>includes: <%= @activity.includes %></p>
-  <p>observations: <%= @activity.observations %></p>
-  <p>city: <%= @activity.city.name %></p>
-  <p>language: <%= @activity.language.name %></p>
+  </div>
 </div>
-<form>
-  <script src="https://s3-us-west-2.amazonaws.com/epayco/v1.0/checkoutEpayco.js" 
-      class="epayco-button" 
-      data-epayco-key="19e22cc4de27ab26bfce37edb69973ce" 
-      data-epayco-amount="<%= @activity.price ||= 50000 %>" 
-      data-epayco-name="<%= @activity.name %>" 
-      data-epayco-description="<%= @activity.description  %>" 
-      data-epayco-currency="cop" 
-      data-epayco-country="co" 
-      data-epayco-test="true"
-      data-epayco-response="http://98b5f63c.ngrok.io" 
-      data-epayco-confirmation="http://98b5f63c.ngrok.io" >
-  </script>
-</form>
 
-<%= link_to "Edit Activity",   edit_guide_activity_path(@activity.guide.id, @activity.id  ) %>
-<div>
-  <h2>Guide for this activity</h2>
-  <%= @activity.guide.name %>
-  <%= link_to "ver guia", activity_guide_path(@activity.id, @activity.guide.id ) %>
-</div>

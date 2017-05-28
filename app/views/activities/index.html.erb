@@ -1,8 +1,24 @@
-<h1>Las actividades asociadas a la ciudad y lenguage escogido son:</h1>
-
-<% @activities.each do |activity| %>
-  <li>
-    <%= activity.name %>
-    <%= link_to "Show", activity_path(activity.id)  %>
-  </li>
-<% end %>
+<div class="home__activities activities__detail">
+	<div class="container">
+		<h2>Las actividades asociadas a la ciudad y lenguage escogido son:</h2>
+		<div class="row">
+			<% @activities.each do |activity| %>
+				<a href="activities/<%= activity.id %>" class="home__activity col-sm-12 col-md-3">
+					<div class="home__activity__info">
+						<%= image_tag activity.img_url %>
+						<span class="price">
+							<i class="fa fa-money" aria-hidden="true"></i>
+							<%= activity.price %>
+						</span>
+						<span class="name">
+							<i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+							<%= activity.name %>
+						</span>
+						<div class="description"><%= truncate_html(activity.description, length: 40) %>
+						</div>
+					</div>
+				</a>
+			<% end %>
+		</div>
+	</div>
+</div>
