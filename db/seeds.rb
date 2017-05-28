@@ -53,6 +53,9 @@ dumar.languages.push(Language.fourth)
 # Create Activities
 first_guide = Guide.first
 first_guide_id = first_guide.id
+
+lang = Language.all.pluck(:id)
+cit = City.all.pluck(:id)
 18.times do
-  Activity.create(name: 'Rumba bogotana', description: '<p>¿Estás preparado para la mejor fiesta de Latinoamérica? No apta para cuerpos frágiles y mentes sensibles. Te llevare en un recorrido por los mejores bares, pubs y discotecas. Rumba sin descanso toda la noche. ¿Te atreves?</p><ul><li>Itinerario</li><li>8 PM Punto de encuentro PUB ""El irlandes""</li><li>8:30 PM Repúblika Bar</li><li>9 PM Goce pagano</li><li>10 PM Chelsea</li><li>12 PM Gloss</li></ul>', img_url: 'activity-rumba-bogotana.jpg', price: 200000, guide_id: 1, hour: 6, include: 'Transporte privado, bebidas, entradas VIP.', observations: 'Este plan sólo se realiza de jueves a sábado.', city_id: 1)
+  Activity.create(name: 'Rumba bogotana', description: '<p>¿Estás preparado para la mejor fiesta de Latinoamérica? No apta para cuerpos frágiles y mentes sensibles. Te llevare en un recorrido por los mejores bares, pubs y discotecas. Rumba sin descanso toda la noche. ¿Te atreves?</p><ul><li>Itinerario</li><li>8 PM Punto de encuentro PUB ""El irlandes""</li><li>8:30 PM Repúblika Bar</li><li>9 PM Goce pagano</li><li>10 PM Chelsea</li><li>12 PM Gloss</li></ul>', img_url: 'activity-rumba-bogotana.jpg', price: 200000, guide_id: 1, hour: 6, include: 'Transporte privado, bebidas, entradas VIP.', observations: 'Este plan sólo se realiza de jueves a sábado.', city_id: cit.sample, language_id: lang.sample)
 end

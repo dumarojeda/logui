@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
   def index
     city = City.find(params[:city])
     @activities = city.activities
+    @activities = @activities.where(language_id: params[:language].to_i)
   end
 
   def show
