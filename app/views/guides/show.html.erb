@@ -1,2 +1,9 @@
 <h1>Este es el guia</h1>
+  <p>email: <%= @guide.email %></p> 
+  <p>name: <%= @guide.name %></p> 
+  <p>description: <%= @guide.description %></p> 
+  <p>img_url: <%= @guide.img_url %></p> 
+                         
+  <p>city_id: <%= @guide.city_id %></p> 
 
+<%= link_to "Crea tu actividad", new_guide_activity_path(@guide.id)  %>
