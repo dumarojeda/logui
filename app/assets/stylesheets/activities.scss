@@ -2,10 +2,68 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'variables.scss';
+
 .activities__detail.home__activities {
 	margin: 0;
 	background-color: white;
 	padding-top: 10px;
+}
+
+.guide__profile {
+	padding: 40px 0;
+	background-color: rgba(44, 80, 152, 0.1);
+	.name {
+		font-size: 30px;
+		text-align: center;
+		margin-top: 20px;
+		color: $purple;
+		font-weight: 900;
+		letter-spacing: -1px;
+	}
+	.copy {
+		text-align: center;
+	}
+}
+
+.activity__info {
+	margin: 30px 0;
+
+	.guide__image {
+		text-align: center;
+		img {
+			width: 100px;
+			height: 100px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+
+	p {
+		font-size: 16px;
+		padding-right: 20px;
+	}
+
+	.pay {
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 60px;
+	}
+
+	.epayco-button-render {
+		margin-top: 20px;
+		&:hover {
+			opacity: .7;
+		}
+	}
+
+	.d, i {
+		font-weight: 900;
+	}
+
+	i {
+		color: $purple;
+	}
 }
 
 .activities__detail {
