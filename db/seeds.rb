@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Language.destroy_all
+City.destroy_all
+Guide.destroy_all
+Tourist.destroy_all
+Activity.destroy_all
+Score.destroy_all
+GuideLanguage.destroy_all
+TouristLanguage.destroy_all
+
 # Create Languages
 Language.create(name: 'English', img_url: 'flag-united-state.svg')
 Language.create(name: 'Spanish', img_url: 'flag-spain.svg')
@@ -21,8 +30,8 @@ City.create(name:'Mexico D.F', img_url: 'city-mexico-df.jpg')
 City.create(name:'São Paulo', img_url: 'city-sap-paulo.jpg')
 City.create(name:'Santiago de Chile', img_url: 'city-santiago-de-chile.jpg')
 
-## Create Guides 
-## pepito
+# Create Guides 
+# pepito
 pepito = Guide.create(name:"Pepito", email:"p@gmail.com", password:"123456789", password_confirmation:"123456789", city_id:1)
 pepito.languages.push(Language.first)
 
@@ -34,3 +43,4 @@ carolina.languages.push(Language.first)
 
 dumar = Guide.create(name:"Dumar", email:"dumar@gmail.com", password:"123456789", city_id:2)
 dumar.languages.push(Language.first)
+

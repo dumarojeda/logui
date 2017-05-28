@@ -39,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Use bootstrap-sass gem for styles
 gem 'bootstrap-sass', '~> 3.2.0'
+# Use Font awesome for icons
+gem 'font-awesome-sass', '~> 4.7.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
