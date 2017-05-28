@@ -6,7 +6,15 @@
 		<ul>
       <li><%= link_to "Log In", new_tourist_session_path %></li>
 			<li><%= link_to "Sign Up", new_tourist_registration_path %></li>
-			<li><%= link_to "Become a Guide", new_guide_registration_path, class: 'action__join' %></li>
+      <% if current_guide %>
+				<li>
+		      <%= link_to edit_guide_registration_path, class: 'action__join' do %>
+						Hola, <%= current_guide.name %>
+		      <% end %>
+      	</li>
+      <% else %>
+				<li><%= link_to "Become a Guide", new_guide_registration_path, class: 'action__join' %></li>
+      <% end %>
 		</ul>
 	</nav>
 </header>
