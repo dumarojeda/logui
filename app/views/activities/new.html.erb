@@ -1,32 +1,51 @@
-<h2>Crea tu actividad</h2>
-<% if @activity.errors.any? %>
-  <div class="errors">  
-    <h2>
-      <%= pluralize(@activity.errors.count, "error") %> 
-      prohibited this entry from being saved:
-    </h2>
-    <ul>
-      <% @activity.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+<div class="container form">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="form__section">
+        <h2 class="main__title">Crea tu actividad</h2>
+        <% if @activity.errors.any? %>
+          <div class="errors">  
+            <h2>
+              <%= pluralize(@activity.errors.count, "error") %> 
+              prohibited this entry from being saved:
+            </h2>
+            <ul>
+              <% @activity.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= form_for(@activity) do |f| %>      
+          <div class="form-group">
+            <%= f.text_field :name, placeholder: 'Name', class: 'form__field' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_area :description, placeholder: 'Description', class: 'form__field' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :img_url, placeholder: 'Avatar', class: 'form__field' %>
+          </div>
+          <div class="form-group">
+            <%= f.number_field :price, placeholder: 'Price', class: 'form__field' %>
+          </div>
+          <div class="form-group">
+            <%= f.number_field :hour, placeholder: 'Hour', class: 'form__field' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :includes, placeholder: 'Includes', class: 'form__field' %>
+          </div>
+          <div class="form-group">
+            <%= collection_select(:activity, :city_id, City.all, :id, :name, {prompt: 'Select your city'}, {class: 'form__field' }) %> 
+          </div>
+          <div class="form-group">
+            <%= collection_select(:activity, :language_id, Language.all, :id, :name, {prompt: 'Select your Language'}, {class: 'form__field' }) %> 
+          </div>
+          <%= f.hidden_field(:guide_id, value: @guide_id) %>
+          <%= f.submit "Crea tu actividad", class: 'form__button' %>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
-<%= form_for(@activity) do |f| %>      
-  <p>name: <%= f.text_field :name %></p>
-  <p>description: <%= f.text_area :description %></p>
-  <p>img_url: <%= f.text_field :img_url %></p>
-  <p>price: <%= f.number_field :price %></p>
-  <p>hour: <%= f.number_field :hour %></p>
-  <p>includes: <%= f.text_field :includes %></p>
-  <p>city: 
-    <%= collection_select(:activity, :city_id, City.all, :id, :name, prompt: true) %> 
-  </p>
-  <p>language:
-    <%= collection_select(:activity, :language_id, Language.all, :id, :name, prompt: true) %>
-  </p>
-  <p>observations: <%= :observations %></p>
-  <%= f.hidden_field(:guide_id, value: @guide_id) %>
-  <%= f.submit %>
-<% end %>
-  
+</div>
+          
