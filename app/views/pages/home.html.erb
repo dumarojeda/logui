@@ -49,4 +49,47 @@
 			</div>
 		<% end %>
 	</div>
+	<div class="how-it-works">
+		<div class="container">
+			<h2>Como funciona </h2>
+			<div class="row">
+				<div class="hiw__item step1 col-sm-12 col-md-4">
+					<%= image_tag 'city.svg' %>
+					<h4>Seleccionas la ciudad donde vas a tomar tu actividad</h4>
+				</div>
+				<div class="hiw__item step2 col-sm-12 col-md-4">
+					<%= image_tag 'lan.svg' %>
+					<h4>Seleccionas tu idioma</h4>
+				</div>
+				<div class="hiw__item step3 col-sm-12 col-md-4">
+					<%= image_tag 're.svg' %>
+					<h4>Reservas tu actividad</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="home__activities">
+		<div class="container">
+			<h2>Actividades Recientes:</h2>
+			<div class="row">
+				<% @activities.each do |activity| %>
+					<a href="activities/<%= activity.id %>" class="home__activity col-sm-12 col-md-3">
+						<div class="home__activity__info">
+							<%= image_tag "http://suitelife.com/blog/wp-content/uploads/2015/08/party-in-barcelona.jpg" %>
+							<span class="price">
+								<i class="fa fa-money" aria-hidden="true"></i>
+								<%= activity.price %>
+							</span>
+							<span class="name">
+								<i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+								<%= activity.name %>
+							</span>
+							<div class="description"><%= truncate_html(activity.description, length: 40) %>
+							</div>
+						</div>
+					</a>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>
