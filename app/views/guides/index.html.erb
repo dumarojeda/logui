@@ -1,5 +1,6 @@
 <h2>los guias que cumplen sus criterios son:</h2>
-
-<%= @guides.each do |guide| %>
-  <%= guide.name  %>
-<% end %>
+<ul>
+  <% @guides.each do |guide| %>
+    <li><%= guide.name  %></li> 
+  <% end %>
+</ul>

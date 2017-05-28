@@ -5,6 +5,7 @@ class Guide < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   # asociations
+  has_many :guide_languages
   belongs_to :city
   has_many :languages, through: :guide_languages
   has_many :activities

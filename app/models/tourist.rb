@@ -5,6 +5,7 @@ class Tourist < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   # asociations
+  has_many :tourist_languages
   belongs_to :city
   has_many :languages, through: :tourist_languages
 end
