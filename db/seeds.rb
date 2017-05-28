@@ -24,12 +24,12 @@ Language.create(name: 'Italian', img_url: 'flag-italy.png')
 Language.create(name: 'German', img_url: 'flag-germany.png')
 
 # Create cities
-City.create(name:'Bogotá', img_url: 'city-bogota.jpg', description: "Lorem ipsum dolor sit amet")
-City.create(name:'Buenos Aires', img_url: 'city-buenos-aires.jpg', description: "Lorem ipsum dolor sit amet")
-City.create(name:'Mexico D.F', img_url: 'city-mexico-df.jpg', description: "Lorem ipsum dolor sit amet")
-City.create(name:'São Paulo', img_url: 'city-sao-paulo.jpg', description: "Lorem ipsum dolor sit amet")
-City.create(name:'Santiago de Chile', img_url: 'city-santiago-de-chile.jpg', description: "Lorem ipsum dolor sit amet")
-City.create(name:'Lima', img_url: 'city-lima.jpg', description: "Lorem ipsum dolor sit amet")
+City.create(name:'Bogotá', img_url: 'city-bogota.jpg', description: "La capital de la cultura latinoaméricana")
+City.create(name:'Buenos Aires', img_url: 'city-buenos-aires.jpg', description: "La ciudad de la furia, donde nadie sabe de mi...")
+City.create(name:'Mexico D.F', img_url: 'city-mexico-df.jpg', description: "Tacos, chilaquiles, chile  mucha diversión")
+City.create(name:'São Paulo', img_url: 'city-sao-paulo.jpg', description: "Puro sabor y carnaval brasileño")
+City.create(name:'Santiago de Chile', img_url: 'city-santiago-de-chile.jpg', description: "La mejor ciudad para vivir y viajar en Latinoamérica")
+City.create(name:'Lima', img_url: 'city-lima.jpg', description: "Los mejores sabores de latinoamérica")
 
 c = City.first
 d = c.id
