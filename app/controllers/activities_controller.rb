@@ -13,20 +13,26 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = 
+    @activity = Activity.create(activities_params)
   end
 
   def edit
+    @activity = Activity.find(params[:id])
   end
 
   def update
+    @activity = Activity.find(params[:id])
+    @activity.update(activities_params)
+    redirect_to activities_path
   end
 
   def destroy
+    @activity = Activity.find(params[:id])
+    @Activity.destroy
   end
 
   def activities_params
-    params
+    params.require(:activity).permit(:name, :description, :img_url, :price, :hour, :include, :observations, :city_id, :guide_id)
   end
 
 end
