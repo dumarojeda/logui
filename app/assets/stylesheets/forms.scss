@@ -32,9 +32,33 @@ select {
   appearance:         inherit;
 }
 
+.shared__links {
+  text-align: center;
+  margin: 10px;
+  a {
+    color: $purple;
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0 5px;
+  }
+  br {
+    display: none;
+  }
+}
+
+.main__title {
+  text-align: center;
+}
+.container {
+  &.form {
+    padding: 7em 0 8em;
+  }
+}
+
 .menu_user {
   position: relative;
   .dropdown-menu_user {
+    display: none;
     position: absolute;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     background-color: white;
@@ -58,28 +82,5 @@ select {
       transform: rotate(40deg);
       left: 42%;
     }
-  }
-}
-
-.shared__links {
-  text-align: center;
-  margin: 10px;
-  a {
-    color: $purple;
-    display: inline-block;
-    font-size: 0.8em;
-    margin: 0 5px;
-  }
-  br {
-    display: none;
-  }
-}
-
-.main__title {
-  text-align: center;
-}
-.container {
-  &.form {
-    padding: 7em 0 8em;
   }
 }
