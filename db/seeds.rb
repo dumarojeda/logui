@@ -24,19 +24,19 @@ Language.create(name: 'Italian', img_url: 'flag-italy.png')
 Language.create(name: 'German', img_url: 'flag-germany.png')
 
 # Create cities
-City.create(name:'Bogotá', img_url: 'city-bogota.jpg')
-City.create(name:'Buenos Aires', img_url: 'city-buenos-aires.jpg')
-City.create(name:'Mexico D.F', img_url: 'city-mexico-df.jpg')
-City.create(name:'São Paulo', img_url: 'city-sao-paulo.jpg')
-City.create(name:'Santiago de Chile', img_url: 'city-santiago-de-chile.jpg')
-City.create(name:'Lima', img_url: 'city-lima.jpg')
+City.create(name:'Bogotá', img_url: 'city-bogota.jpg', description: "Lorem ipsum dolor sit amet")
+City.create(name:'Buenos Aires', img_url: 'city-buenos-aires.jpg', description: "Lorem ipsum dolor sit amet")
+City.create(name:'Mexico D.F', img_url: 'city-mexico-df.jpg', description: "Lorem ipsum dolor sit amet")
+City.create(name:'São Paulo', img_url: 'city-sao-paulo.jpg', description: "Lorem ipsum dolor sit amet")
+City.create(name:'Santiago de Chile', img_url: 'city-santiago-de-chile.jpg', description: "Lorem ipsum dolor sit amet")
+City.create(name:'Lima', img_url: 'city-lima.jpg', description: "Lorem ipsum dolor sit amet")
 
 c = City.first
 d = c.id
 
 language = Language.first
 l = language.id
-# Create Guides 
+# Create Guides
 # pepito
 pepito = Guide.create(name:"Pepito", email:"p@gmail.com", password:"123456789", password_confirmation:"123456789", city_id:d)
 pepito.languages.push(Language.first)
