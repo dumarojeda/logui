@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
       <div class="form__section">
-        <h2 class="main__title">Sign up Tourist</h2>
+        <h2 class="main__title">Sign up Guides</h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
@@ -16,7 +16,7 @@
           </div>
 
           <div class="form-group">
-            <%= collection_select(:tourist, :city_id, City.all, :id, :name, {:prompt => 'Choose your city'}, {class: 'form__field' }) %> 
+            <%= collection_select(:guide, :city_id, City.all, :id, :name, {:prompt => 'Choose your city'}, {class: 'form__field' }) %> 
           </div>
 
           <div class="form-group">
@@ -34,6 +34,7 @@
             <%= f.submit "Sign up", class: 'form__button' %>
           </div>
         <% end %>
+
         <div class="shared__links">
           <%= render "tourists/shared/links" %>
         </div>
