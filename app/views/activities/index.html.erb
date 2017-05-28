@@ -1,2 +1,8 @@
-<h1>Activities#index</h1>
-<p>Find me in app/views/activities/index.html.erb</p>
+<h1>Las actividades asociadas a la ciudad y lenguage escogido son:</h1>
+
+<% @activities.each do |activity| %>
+  <li>
+    <%= activity.name %>
+    <%= link_to "Show", activity_path(activity.id)  %>
+  </li>
+<% end %>

@@ -1,0 +1,32 @@
+<h2>Crea tu actividad</h2>
+<% if @activity.errors.any? %>
+  <div class="errors">  
+    <h2>
+      <%= pluralize(@activity.errors.count, "error") %> 
+      prohibited this entry from being saved:
+    </h2>
+    <ul>
+      <% @activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for(@activity) do |f| %>      
+  <p>name: <%= f.text_field :name %></p>
+  <p>description: <%= f.text_area :description %></p>
+  <p>img_url: <%= f.url_field :img_url %></p>
+  <p>price: <%= f.number_field :price %></p>
+  <p>hour: <%= :hour %></p>
+  <p>includes: <%= :includes %></p>
+  <p>city: 
+    <%= collection_select(:activity, :city_id, City.all, :id, :name, prompt: true) %> 
+  </p>
+  <p>language:
+    <%= collection_select(:activity, :language_id, Language.all, :id, :name, prompt: true) %>
+  </p>
+  <p>observations: <%= :observations %></p>
+  <%= f.hidden_field(:guide_id, value: @guide_id) %>
+  <%= f.submit %>
+<% end %>
+  
