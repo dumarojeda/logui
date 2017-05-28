@@ -1,0 +1,8 @@
+<h1>hola</h1>
+
+<%= form_for(@guide) do |f| %>
+  Description : <%= f.text_field :last_name %><br />
+  Biography : <%= f.text_area :biography %><br />
+  Admin?    : <%= f.check_box :admin %><br />
+  <%= f.submit %>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528011210) do
+ActiveRecord::Schema.define(version: 20170528022610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170528011210) do
     t.integer  "hour"
     t.text     "include"
     t.text     "observations"
+    t.integer  "city_id"
     t.index ["guide_id"], name: "index_activities_on_guide_id", using: :btree
   end
 
