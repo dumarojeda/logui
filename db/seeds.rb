@@ -16,12 +16,12 @@ GuideLanguage.destroy_all
 TouristLanguage.destroy_all
 
 # Create Languages
-Language.create(name: 'English', img_url: 'flag-united-state.svg')
-Language.create(name: 'Spanish', img_url: 'flag-spain.svg')
-Language.create(name: 'French', img_url: 'flag-france.svg')
-Language.create(name: 'Japanese', img_url: 'flag-japan.svg')
-Language.create(name: 'Italian', img_url: 'flag-italy.svg')
-Language.create(name: 'German', img_url: 'flag-germany.svg')
+Language.create(name: 'English', img_url: 'flag-united-state.png')
+Language.create(name: 'Spanish', img_url: 'flag-spain.png')
+Language.create(name: 'French', img_url: 'flag-france.png')
+Language.create(name: 'Japanese', img_url: 'flag-japan.png')
+Language.create(name: 'Italian', img_url: 'flag-italy.png')
+Language.create(name: 'German', img_url: 'flag-germany.png')
 
 # Create cities
 City.create(name:'Bogotá', img_url: 'city-bogota.jpg')
