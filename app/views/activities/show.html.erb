@@ -1,0 +1,19 @@
+
+<div>
+  <h2>Activity</h2>
+  <p>name: <%= @activity.name %></p>
+  <p>description: <%= @activity.description %></p>
+  <p>img_url: <%= @activity.img_url %></p>
+  <p>price: <%= @activity.price %></p>
+  <p>guide_id: <%= @activity.guide_id %></p>
+  <p>hour: <%= @activity.hour %></p>
+  <p>includes: <%= @activity.includes %></p>
+  <p>observations: <%= @activity.observations %></p>
+</div>
+
+
+<div>
+  <h2>Guide for this activity</h2>
+  <%= @activity.guide.name %>
+  <%= link_to "ver guia", activity_guide_path(@activity.id, @activity.guide.id ) %>
+</div>

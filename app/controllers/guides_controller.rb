@@ -7,4 +7,6 @@ class GuidesController < ApplicationController
     end
   end
 
+  def show
+  end
 end
