@@ -15,10 +15,10 @@
 <%= form_for(@activity) do |f| %>      
   <p>name: <%= f.text_field :name %></p>
   <p>description: <%= f.text_area :description %></p>
-  <p>img_url: <%= f.url_field :img_url %></p>
+  <p>img_url: <%= f.text_field :img_url %></p>
   <p>price: <%= f.number_field :price %></p>
-  <p>hour: <%= :hour %></p>
-  <p>includes: <%= :includes %></p>
+  <p>hour: <%= f.number_field :hour %></p>
+  <p>includes: <%= f.text_field :includes %></p>
   <p>city: 
     <%= collection_select(:activity, :city_id, City.all, :id, :name, prompt: true) %> 
   </p>
