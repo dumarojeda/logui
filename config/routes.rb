@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   get 'activities/index'
 
 	root "pages#show", page: "home"
-	devise_for :guides, controllers: {
+	
+  get "pages/thanks", page: "thanks"
+
+  devise_for :guides, controllers: {
     sessions: 'guides/sessions',
     registrations: 'guides/registrations'
   }

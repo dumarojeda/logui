@@ -167,6 +167,12 @@ body.site {
 	padding: 20px;
 	position: relative;
 	box-shadow: 2px 2px 1px #ccc;
+	@at-root &__logo {
+		&:hover {
+			text-decoration: none;
+			opacity: .8;
+		}
+	}
 	span {
 		font-size: 46px;
 		font-weight: 900;

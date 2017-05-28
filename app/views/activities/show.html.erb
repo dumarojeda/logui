@@ -3,19 +3,29 @@
     <p class="name"><%= @activity.name %></p>
     <%= image_tag @activity.img_url %>
   </div>
-  <div class="container">
-    <h2>Activity</h2>
+  <div class="container activity__info">
+    <h2></h2>
     <div class="row">
-      <div class="col-sm-12 col-md-7">
+      <div class="col-sm-12 col-md-8">
+        <h2>Actividad: </h4>
         <p><%= @activity.description.html_safe %></p>
-        <p>price: <%= @activity.price %></p>
-        <p>guide_id: <%= @activity.guide_id %></p>
-        <p>hour: <%= @activity.hour %></p>
-        <p>includes: <%= @activity.includes %></p>
-        <p>observations: <%= @activity.observations %></p>
-        <p>city: <%= @activity.city.name %></p>
-        <p>language: <%= @activity.language.name %></p>
-        <form>
+        <p>
+          <i class="fa fa-credit-card-alt"></i>
+          <span class="d">Precio</span> <%= @activity.price %>
+        </p>
+        <p>
+          <i class="fa fa-clock-o"></i>
+          <span class="d">Tiempo Actividad:</span><%= @activity.hour %>
+        </p>
+        <p><span class="d">Incluye:</span> <%= @activity.includes %></p>
+        <p><span class="d">Recomendaciones y Observaciones:</span> <%= @activity.observations %></p>
+        <p>
+        <i class="fa fa-location-arrow"></i>
+        <span class="d">Ciudad:</span> <%= @activity.city.name %></p>
+        <p>
+        <i class="fa fa-language"></i>
+        <span class="d">Idioma:</span> <%= @activity.language.name %></p>
+        <form class="pay">
         <script src="https://s3-us-west-2.amazonaws.com/epayco/v1.0/checkoutEpayco.js"
             class="epayco-button"
             data-epayco-key="19e22cc4de27ab26bfce37edb69973ce"
@@ -25,18 +35,30 @@
             data-epayco-currency="cop"
             data-epayco-country="co"
             data-epayco-test="true"
-            data-epayco-response="http://98b5f63c.ngrok.io"
-            data-epayco-confirmation="http://98b5f63c.ngrok.io" >
+            data-epayco-response="<%= pages_thanks_url %>"
+            data-epayco-confirmation="<%= pages_thanks_url %>" >
         </script>
         </form>
-        <%= link_to "Edit Activity",   edit_guide_activity_path(@activity.guide.id, @activity.id  ) %>
+        <%= link_to "Edit Activity",   edit_guide_activity_path(@activity.guide.id, @activity.id  ), class: 'action__join' %>
       </div>
-      <div class="col-sm-12 col-md-3">
-        <h2>Guide for this activity</h2>
-        <p><%= @activity.guide.name %></p>
-        <p><%= @activity.guide.description %></p>
-        
-        <%= link_to "ver guia", activity_guide_path(@activity.id, @activity.guide.id ) %>
+      <div class="col-sm-12 col-md-4 guide__profile">
+        <div class="guide__image"><%= image_tag @activity.guide.img_url %></div>
+        <fieldset class="rating">
+            <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+            <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+            <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+            <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+            <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+            <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+            <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+            <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+            <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+            <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+        </fieldset>
+        <p class="name"><%= t(@activity.guide.name) %></p>
+        <p class="copy">Es el guia asignado para tu actividad</p>
+        <p class="copy" style="font-style: italic;
+    font-size: 13px;"><%= @activity.guide.description %></p>
       </div>
     </div>
 
