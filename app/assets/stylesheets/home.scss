@@ -1,8 +1,12 @@
 @import 'variables.scss';
 
 body.site {
-	color: $gray;
+	color: rgba($gray, .5);
 	font-family: $titleFont;
+}
+
+.purple {
+	color: $purple;
 }
 
 .bg-danger {
@@ -20,6 +24,7 @@ body.site {
 		margin-bottom: 60px;
 		font-size: 28px;
 		letter-spacing: -1px;
+		margin-top: 60px;
 		span {
 			font-weight: 900;
 			color: $purple;
@@ -38,7 +43,7 @@ body.site {
 			object-fit: cover;
 		}
 		h1 {
-			font-size: 20px;
+			font-size: 18px !important;
 			font-weight: 900;
 			position: absolute;
 			text-align: center;
@@ -162,21 +167,19 @@ body.site {
 	padding: 20px;
 	position: relative;
 	box-shadow: 2px 2px 1px #ccc;
-	.slogan {
-		padding-left: 12px;
-		padding-top: 17px;
+	span {
+		font-size: 46px;
+		font-weight: 900;
+		letter-spacing: -1px;
+		color: $purple;
+		position: relative;
+		top: 8px;
+		left: 4px;
 	}
-	@at-root &__logo {
-		width: 90px;
-		height: 50px;
-		a {
-			display: inline-block;
-			width: 100%;
-			height: 100%;
-			background-image: image-url('logo-purple.png');
-			background-size: 100%;
-			background-repeat: no-repeat;
-		}
+	img {
+		width: 60px;
+		position: relative;
+		bottom: 6px;
 	}
 	@at-root &__nav {
 		position: absolute;
