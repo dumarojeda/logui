@@ -4,14 +4,6 @@
   @at-root &__section {
     padding: 1em 2em;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    a {
-      color: $purple;
-      display: inline-block;
-      font-size: 0.8em;
-    }
-    br {
-      display: none;
-    }
   }
   @at-root &__field {
     display: block;
@@ -31,6 +23,23 @@
   }
 }
 
+.shared__links {
+  text-align: center;
+  margin: 10px;
+  a {
+    color: $purple;
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0 5px;
+  }
+  br {
+    display: none;
+  }
+}
+
 .main__title {
   text-align: center;
+}
+.site-container {
+  padding: 2em 0;
 }
