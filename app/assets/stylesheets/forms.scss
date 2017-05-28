@@ -49,6 +49,8 @@ select {
 .main__title {
   text-align: center;
 }
-.site-container {
-  padding: 2em 0 0;
+.container {
+  &.form {
+    padding: 7em 0 8em;
+  }
 }
