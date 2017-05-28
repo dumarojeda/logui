@@ -27,6 +27,7 @@
   </script>
 </form>
 
+<%= link_to "Edit Activity",   edit_guide_activity_path(@activity.guide.id, @activity.id  ) %>
 <div>
   <h2>Guide for this activity</h2>
   <%= @activity.guide.name %>

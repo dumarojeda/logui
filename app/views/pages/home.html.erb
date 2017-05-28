@@ -75,7 +75,7 @@
 				<% @activities.each do |activity| %>
 					<a href="activities/<%= activity.id %>" class="home__activity col-sm-12 col-md-3">
 						<div class="home__activity__info">
-							<%= image_tag "http://suitelife.com/blog/wp-content/uploads/2015/08/party-in-barcelona.jpg" %>
+							<%= image_tag activity.img_url %>
 							<span class="price">
 								<i class="fa fa-money" aria-hidden="true"></i>
 								<%= activity.price %>
