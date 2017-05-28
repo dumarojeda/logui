@@ -26,13 +26,18 @@ class ActivitiesController < ApplicationController
   end
 
   def edit
+    puts "edit"*30
+    puts "#{params[:guide_id]}"
+    @guide_id = params[:guide_id]
     @activity = Activity.find(params[:id])
   end
 
   def update
+    puts "hola"*30
+    puts "#{params[:activity][:guide_id]}"
     @activity = Activity.find(params[:id])
-    @activity.update(activities_params)
-    redirect_to activities_path
+    @activity.update!(activities_params)
+    redirect_to guide_activity_path(@activity.guide_id, @activity.id)
   end
 
   def destroy

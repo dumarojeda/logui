@@ -1,4 +1,4 @@
-<h2>Crea tu actividad</h2>
+<h2>Edita tu actividad</h2>
 <% if @activity.errors.any? %>
   <div class="errors">  
     <h2>
@@ -26,6 +26,7 @@
     <%= collection_select(:activity, :language_id, Language.all, :id, :name, prompt: true) %>
   </p>
   <p>observations: <%= :observations %></p>
+  <span><%= @guide_id  %></span>
   <%= f.hidden_field(:guide_id, value: @guide_id) %>
   <%= f.submit %>
 <% end %>
