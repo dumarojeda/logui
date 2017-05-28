@@ -2,10 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.activities__detail.home__activities {
+	margin: 0;
+	background-color: white;
+	padding-top: 10px;
+}
+
+.activities__detail {
+	@at-root &__header {
+		position: relative;
+		.name {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			color: white;
+			font-size: 80px;
+			font-weight: 900;
+			letter-spacing: -2px;
+			background-color: rgba(black, .4);
+			text-shadow: 1px 1px 1px rgba(black, .9);
+			margin: 0;
+		}
+		img {
+			width: 100%;
+			max-height: 500px;
+			object-fit: cover;
+		}
+	}
+}
 
 .home {
 	@at-root &__activities {
 		margin-top: 40px;
+		background-color: rgba(black, .05);
+		padding: 40px 0;
 		h2 {
 			font-weight: 900;
 			letter-spacing: -1px;

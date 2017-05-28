@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
       <div class="form__section">
-        <h2 class="main__title">Log in Turist</h2>
+        <h2 class="main__title">Log in Guides</h2>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
@@ -24,8 +24,9 @@
             <%= f.submit "Log in", class: 'form__button' %>
           </div>
         <% end %>
+
         <div class="shared__links">
-          <%= render "tourists/shared/links" %>
+          <%= render "guides/shared/links" %>
         </div>
       </div>
     </div>

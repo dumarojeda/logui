@@ -1,12 +1,24 @@
 <header class="header">
 	<div class="header__logo">
-		<%= link_to "", root_path %>
+		<%= image_tag 'logui_icon.svg' %>
+		<span>logui</span>
 	</div>
 	<nav class="header__nav">
 		<ul>
-      <li><%= link_to "Log In", new_tourist_session_path %></li>
-			<li><%= link_to "Sign Up", new_tourist_registration_path %></li>
-			<li><%= link_to "Become a Guide", new_guide_registration_path, class: 'action__join' %></li>
+      <% if current_guide %>
+        <li class="menu_user">
+          <a href="#" class="action__join">
+            Hola, <%= current_guide.name %>
+          </a>
+          <ul class="dropdown-menu_user">
+              <li><%= link_to "Edit Account", edit_guide_registration_path %></li>
+              <li><%= link_to "Sign out", destroy_guide_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "Log In", new_guide_session_path %></li>
+				<li><%= link_to "Become a Guide", new_guide_registration_path, class: 'action__join' %></li>
+      <% end %>
 		</ul>
 	</nav>
 </header>

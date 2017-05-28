@@ -12,6 +12,10 @@
     background-color: $whitesmoke;
     border: 0;
   }
+  @at-root &__info {
+    font-size: 0.8em;
+    margin-bottom: 1em;
+  }
   @at-root &__button {
     background-color: $purple;
     color: white;
@@ -21,6 +25,11 @@
     margin: 0 auto;
     display: block
   }
+}
+select {
+  -webkit-appearance: inherit;
+  -moz-appearance:    inherit;
+  appearance:         inherit;
 }
 
 .shared__links {
@@ -40,6 +49,38 @@
 .main__title {
   text-align: center;
 }
-.site-container {
-  padding: 2em 0;
+
+.container {
+  &.form {
+    padding: 7em 0 8em;
+  }
 }
+
+.menu_user {
+  position: relative;
+  .dropdown-menu_user {
+    display: none;
+    position: absolute;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: white;
+    padding: 1em;
+    border-radius: 5px;
+    top: 28px;
+    li {
+      padding: 0 !important;
+      a {
+        display: block;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      position: absolute;
+      top: -5px;
+      transform: rotate(40deg);
+      left: 42%;
+    }
+  }
