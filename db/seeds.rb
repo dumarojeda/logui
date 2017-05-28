@@ -20,3 +20,17 @@ City.create(name:'Buenos Aires', img_url: 'city-buenos-aires.jpg')
 City.create(name:'Mexico D.F', img_url: 'city-mexico-df.jpg')
 City.create(name:'São Paulo', img_url: 'city-sap-paulo.jpg')
 City.create(name:'Santiago de Chile', img_url: 'city-santiago-de-chile.jpg')
+
+## Create Guides 
+## pepito
+pepito = Guide.create(name:"Pepito", email:"p@gmail.com", password:"123456789", password_confirmation:"123456789", city_id:1)
+pepito.languages.push(Language.first)
+
+melissa = Guide.create(name:"Melissa", email:"melissa160@gmail.com", password:"123456789", city_id:1)
+melissa.languages.push(Language.first)
+
+carolina = Guide.create(name:"Carolina", email:"carolina@gmail.com", password:"123456789", city_id:2)
+carolina.languages.push(Language.first)
+
+dumar = Guide.create(name:"Dumar", email:"dumar@gmail.com", password:"123456789", city_id:2)
+dumar.languages.push(Language.first)
