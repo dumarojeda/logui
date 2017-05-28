@@ -5,34 +5,20 @@
 	</div>
 	<nav class="header__nav">
 		<ul>
-      <li><%= link_to "Log In", new_guide_session_path %></li>
       <% if current_guide %>
-				<li class="menu_user">
-		      <a href="#" class="action__join">
-						Hola, <%= current_guide.name %>
-		      </a>
+        <li class="menu_user">
+          <a href="#" class="action__join">
+            Hola, <%= current_guide.name %>
+          </a>
           <ul class="dropdown-menu_user">
               <li><%= link_to "Edit Account", edit_guide_registration_path %></li>
               <li><%= link_to "Sign out", destroy_guide_session_path, method: :delete %></li>
           </ul>
-      	</li>
+        </li>
       <% else %>
+        <li><%= link_to "Log In", new_guide_session_path %></li>
 				<li><%= link_to "Become a Guide", new_guide_registration_path, class: 'action__join' %></li>
       <% end %>
-      
-      <% if current_guide %>
-          <li class="dropdown">
-            <ul class="dropdown-menu">
-              <li><a href="#">Hi <%= current_guide.name %></a></li>
-              <li role="separator" class="divider"></li>
-              <li><%= link_to "Edit Account", edit_guide_registration_path %></li>
-              <li><%= link_to "Sign out", destroy_guide_session_path, method: :delete %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Sign up", new_guide_registration_path %></li>
-          <li><%= link_to "Sign in", new_guide_session_path %></li>
-        <% end %>
 		</ul>
 	</nav>
 </header>
