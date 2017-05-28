@@ -8,7 +8,15 @@
           <%= devise_error_messages! %>
 
           <div class="form-group">
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Name', class: 'form__field' %>
+          </div>
+
+          <div class="form-group">
             <%= f.email_field :email, autofocus: true, placeholder: 'Email', class: 'form__field' %>
+          </div>
+
+          <div class="form-group">
+            <%= collection_select(:tourist, :city_id, City.all, :id, :name, {:prompt => 'Choose your city'}) %> 
           </div>
 
           <div class="form-group">
