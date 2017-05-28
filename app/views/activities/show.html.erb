@@ -35,8 +35,8 @@
             data-epayco-currency="cop"
             data-epayco-country="co"
             data-epayco-test="true"
-            data-epayco-response="http://98b5f63c.ngrok.io"
-            data-epayco-confirmation="http://98b5f63c.ngrok.io" >
+            data-epayco-response="<%= pages_thanks_url %>"
+            data-epayco-confirmation="<%= pages_thanks_url %>" >
         </script>
         </form>
         <%= link_to "Edit Activity",   edit_guide_activity_path(@activity.guide.id, @activity.id  ), class: 'action__join' %>
