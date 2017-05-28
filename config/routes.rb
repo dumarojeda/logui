@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     resources :guides
   end
   
+  resources :guides do
+    resources :activities
+  end
 end

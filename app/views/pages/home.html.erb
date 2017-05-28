@@ -1,35 +1,52 @@
 <div class="home">
 	<div class="container">
 		<h2 class="home-copy">
-			Reserva actividades en tu idioma y disfruta tu viaje como si estuvieras en tu ciudad
+			Reserva <span>actividades</span> en tu <span>idioma</span> y disfruta tu viaje como si estuvieras en tu ciudad
 		</h2>
 
-		<%= form_tag guides_path, method: 'get', authenticity_token: false do %>
+		<%= form_tag activities_path, method: 'get', authenticity_token: false, id:'search-city' do %>
 
-			<div class="row home__cities">
+			<div class="row home__cities" data-toggle="modal" data-target="#language-modal">
 				<% @cities.each do |city| %>
 					<div class="home__city col-sm-6 col-md-2">
 						<%= radio_button_tag "city", city.id, false %>
 						<div class="home__city__info">
-							<h1><%= city.name %></h1>
 							<i class="fa fa-check-circle"></i>
+							<span><%= city.description %></span>
 						</div>
 						<%= image_tag city.img_url %>
+						<h1><%= city.name %></h1>
 						</div>
 				<% end %>
 			</div>
-
-				<h2 class="text-center">Select your language </h2>
-				<div class="row home__languages">
-					<% @languages.each do |language| %>
-						<div class="home__language">
-							<%= radio_button_tag "language", language.id, false %>
-							<label for="<%= language.name %>"><%= language.name %></label>
-							<%= image_tag language.img_url %>
+			<div class="modal fade" id="language-modal">
+				<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<div class="modal-body">
+						<div class="home__languages">
+							<h2 class="text-center">Select your language </h2>
+							<div class="home-languages__wrapper">
+								<div class="bg-danger">Debes Escoger al menos un idioma.</div>
+								<% @languages.each do |language| %>
+									<div class="home__language">
+										<%= radio_button_tag "language", language.id, false %>
+										<label for="<%= language.name %>"><%= language.name %></label>
+										<%= image_tag language.img_url %>
+										<div class="home__language__info">
+											<i class="fa fa-check-circle"></i>
+										</div>
+									</div>
+								<% end %>
+							</div>
+				 			<%= submit_tag "Search", :name => nil, class:"action__join" %>
 						</div>
-					<% end %>
+					</div>
 				</div>
-		 <%= submit_tag "Search", :name => nil %>
+				</div>
+			</div>
 		<% end %>
 	</div>
 </div>

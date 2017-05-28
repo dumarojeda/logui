@@ -7,4 +7,7 @@ class GuidesController < ApplicationController
     end
   end
 
+  def show
+    @guide = Guide.find(params[:id])
+  end
 end
