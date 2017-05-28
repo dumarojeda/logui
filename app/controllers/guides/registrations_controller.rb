@@ -1,7 +1,7 @@
 class Guides::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  # before_filter :configure_permitted_parameters, if: :devise_controller?
 
   # GET /resource/sign_up
   # def new
@@ -19,9 +19,6 @@ class Guides::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
 
   # DELETE /resource
   # def destroy
@@ -60,8 +57,13 @@ class Guides::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :city_id])
-      devise_parameter_sanitizer.permit(:user_update, keys: [:name, :city_id])
+
+    def account_update_params
+      params.require(:guide).permit(:name, :city_id, :email, :password, :password_confirmation, :current_password)
     end
+    
+    # def configure_permitted_parameters
+    #   devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :city_id])
+    #   devise_parameter_sanitizer.permit(:user_update, keys: [:name, :city_id])
+    # end
 end
